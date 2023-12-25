@@ -1,0 +1,198 @@
+
+body {
+    /*font-family: ;*/
+    min-height: 100vh;
+    color: #555;
+    
+}
+
+ /* ---///  Modal ///---- */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.Search_Icon {
+    border:none;
+    background: #ffffff00;
+    margin: 5px 5px;
+    width: 25px;
+    height: 25px;
+}
+.Search_Icon img {
+    margin-left: -7px;
+    margin-top: -8px;
+}
+.modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  z-index: 10;
+  background-color: white;
+  width: 1440px;
+  max-width: 100%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+/* ---///  Search  Products ///---- */
+.modal .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px;
+    /*align-items: start;*/
+    margin-bottom: 20px;
+    margin: 16px 100px;
+}
+
+.modal .Search_Box {
+    grid-column: 1;
+    grid-row: 1;
+    /*width: 95%;
+    margin: 0 auto;*/
+}
+
+
+
+/* line under searchbox */
+.modal #search-container input {
+    width: 100%;
+    padding: 15px 40px;
+    font-size: medium;
+    border: none;
+    border-bottom: 1px solid #000;
+
+}
+
+#search-container img {
+    position: absolute;
+    width: 20px;
+    left: 115px;
+    top: 29px;
+}
+
+#search-container input:focus {
+    border-bottom-color: #9b0b03;
+}
+
+
+/* button category */
+
+.modal .container h5:nth-of-type(1) {
+    position: absolute;
+    top: 44px;
+    font-size: 20px;
+}
+.modal .categories {
+    position: absolute;    
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    width: 164px;
+    top: 109px;
+
+}
+
+.modal .button-value {
+    padding: 1px 2.2px;
+    background-color: transparent;
+    color: #9b0b03;
+    border: none;
+    text-align: left;
+    
+    
+}
+
+/* /// ---  json Products ----/// */
+
+.modal .container h5:nth-of-type(2) {
+    font-size: 20px;
+    text-align: left;
+    margin-left: 250px;
+    position: absolute;
+    top: 44px;
+
+}
+
+.modal .products {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    left: 125px;
+    top: 31px;
+    position: relative;
+}
+
+
+.modal .product {
+
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.modal .product:nth-child(n+5) {
+    display: none;
+}
+
+.modal .product img {
+    width: 100%;
+}
+
+.modal .products .title {
+font-weight: bold;
+}
+
+.modal .products .description {
+color: #9b0b03;
+}
+
+.modal .products .category {
+color: #9b0b03;
+}
+
+.modal .container a {
+    font-size: 15px;
+    position: absolute;
+    top: 83px;
+    right: 130px;
+    color: #9b0b03;
+}
